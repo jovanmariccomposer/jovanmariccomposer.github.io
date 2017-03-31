@@ -1,0 +1,27 @@
+<svg width="100" height="100" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  <g id="player">
+     <path id="vertline" d="M000,00L000,200" stroke="#e8ddcb" stroke-width="20" />
+    <path id="line2" d="M000,000L150,100" stroke="#e8ddcb" stroke-width="10" fill="none" />
+    <path id="line3" d="M150,100L20,190" stroke="#e8ddcb" stroke-width="10" fill="none" />
+     <animate xlink:href="#line2" id="topline" attributeName="d" from="M000,000L150,100" to="M20,100L120,100" dur=".5s" begin="player.click" fill="" />
+     <animate xlink:href="#line3" id="bottomline" attributeName="d" from="M150,100L20,190" to="M120,100L20,100" dur=".5s" begin="player.click" fill="" />
+    <animate xlink:href="#line2" attributeName="d" from="M20,100L120,100" to="M100,20L100,180" dur="1s" begin="topline.end" fill="" />
+    <animate xlink:href="#line3" attributeName="d" from="M120,100L20,100" to="M100,180L100,20" dur="1s" begin="bottomline.end" />
+    <animate xlink:href="#vertline" attributeName="d" from="M000,00L000,200" to="M000,20L000,180" dur="1s" begin="bottomline.end" id="reduceVertline"/>
+    <animate xlink:href="#line2" attributeName="stroke" from="#e8ddcb" to="#cdb380" dur="1s" begin="topline.end"  />
+    <animate xlink:href="#line3" attributeName="stroke" from="#e8ddcb" to="#cdb380" dur="1s" begin="bottomline.end" />
+    <animate xlink:href="#vertline" attributeName="stroke" from="#e8ddcb" to="#cdb380" dur="1s" begin="bottomline.end" />
+   <set xlink:href="#vertline" attributeName="d"
+       to="M000,20L000,180" begin="reduceVertline" dur="3s" />
+    <set xlink:href="#vertline" attributeName="stroke"
+       to="#cdb380" begin="reduceVertline" dur="7s" />
+    <set xlink:href="#line3" attributeName="d"
+       to="M100,180L100,20" begin="reduceVertline" dur="7s" />
+    <set xlink:href="#line3" attributeName="stroke"
+       to="#cdb380" begin="reduceVertline" dur="7s" />
+    <set xlink:href="#line2" attributeName="d"
+       to="M100,20L100,180" begin="reduceVertline" dur="7s" />
+    <set xlink:href="#line2" attributeName="stroke"
+       to="#cdb380" begin="reduceVertline" dur="7s" />
+  </g>
+</svg>
